@@ -3,12 +3,11 @@
  * 
  * You need to replace YOUR_API_KEY in the string associated with KEY with your actual API key
  */
-export const BASE_URL = 'https://api.harvardartmuseums.org';
-export const KEY = 'apikey=YOUR_API_KEY';
+ export const BASE_URL = "https://api.harvardartmuseums.org";
+ export const KEY = "apikey=8b47dc60-0804-40e7-bf42-1c6a3dcd14ec"; // USE YOUR KEY HERE/**
+ 
+//  * This will make a call to the API for a single term and value (e.g. "person", and "unknown"), and return the result
 
-/**
- * This will make a call to the API for a single term and value (e.g. "person", and "unknown"), and return the result
- */
 export async function fetchQueryResultsFromTermAndValue(term, value) {
   try {
     const response = await fetch(`${ BASE_URL }/object?${ KEY }&${ term }=${ encodeURI(value.split('-').join('|')) }`);
